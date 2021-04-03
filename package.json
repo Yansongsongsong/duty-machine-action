@@ -1,5 +1,5 @@
 {
-  "name": "duty-machine-action",
+  "name": "dutymachine-action",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duty-machine/duty-machine-action.git"
+    "url": "git+https://github.com/dutymachine/dutymachine-action.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/duty-machine/duty-machine-action/issues"
+    "url": "https://github.com/dutymachine/dutymachine-action/issues"
   },
-  "homepage": "https://github.com/duty-machine/duty-machine-action#readme",
+  "homepage": "https://github.com/dutymachine/dutymachine-action#readme",
   "dependencies": {
     "@octokit/rest": "^17.11.0",
     "article-parser": "^4.2.6",

@@ -1,4 +1,4 @@
-name: duty-machine-action
+name: dutymachine-action
 description: 'save web article as issue'
 runs:
   using: 'docker'
