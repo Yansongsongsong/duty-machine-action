@@ -1,6 +1,5 @@
 let moment = require('moment')
 let TurndownService = require('turndown')
-const UnionReplacer = require('union-replacer');
 
 let turndownService = new TurndownService()
 
