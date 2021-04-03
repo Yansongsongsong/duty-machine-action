@@ -58,7 +58,7 @@ async function performTasks(list) {
         title: articleData.title,
         labels: ['fetched']
       })
-    } catch(error) {
+    } catch (error) {
       await octokit.issues.createComment({
         owner: OWNER,
         repo: REPO,
@@ -82,6 +82,7 @@ async function performTasks(list) {
 async function perform() {
   let tasks = await getTasks()
   await performTasks(tasks)
+  // todo push to wayback archive
 }
 
 perform()
