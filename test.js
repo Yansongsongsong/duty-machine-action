@@ -3,7 +3,7 @@ let fetchArticle = require('./src/fetchArticle')
 let determineWebsite = require('./src/determineWebsite')
 let renderToMarkdown = require('./src/renderToMarkdown')
 
-function assertArticleFormat({title, dom}) {
+function assertArticleFormat({ title, dom }) {
   if (title && dom) {
 
   } else {
@@ -15,9 +15,9 @@ async function assertFetch(url) {
   return assertArticleFormat(await fetchArticle(url))
 }
 
-;(async () => {
+; (async () => {
   let cmd = process.argv[2]
-  switch(cmd) {
+  switch (cmd) {
     case 'test-website':
       var website = process.argv[3]
       var samples = websites[website].samples

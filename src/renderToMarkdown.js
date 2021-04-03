@@ -1,5 +1,6 @@
 let moment = require('moment')
 let TurndownService = require('turndown')
+const UnionReplacer = require('union-replacer');
 
 let turndownService = new TurndownService()
 
@@ -7,7 +8,7 @@ function strip(str) {
   return str.replace(/(^\s*|\s*$)/g, '')
 }
 
-module.exports = function({title, author, publishTime, dom}) {
+module.exports = function ({ title, author, publishTime, dom }) {
   let mdTitle = ''
   if (author) {
     mdTitle = `${strip(title)} by ${strip(author)}`
@@ -23,11 +24,11 @@ module.exports = function({title, author, publishTime, dom}) {
 
   let mdPublishDate = publishTime ? moment(publishTime * 1000).utcOffset(8).format('YYYY-MM-DD') : '';
 
-  let html = dom.innerHTML
-  let mdBody = turndownService.turndown(html)
+  // let html = dom.innerHTML
+  let mdBody = turndownService.turndown(dom)
 
   mdBody = mdBody.replace(/@/g, '@ ')
-  
+
   if (mdPublishDate) {
     return `${mdTitle}\n------\n**${mdPublishDate}**\n${mdBody}`
   } else {

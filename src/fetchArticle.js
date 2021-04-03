@@ -9,7 +9,7 @@ module.exports = async function fetchArticle(url) {
   let escaped
   try {
     escaped = new URL(url).href
-  } catch(e) {
+  } catch (e) {
     escaped = new URL(`https://${url}`).href
   }
 

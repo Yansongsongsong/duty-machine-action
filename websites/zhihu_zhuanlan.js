@@ -30,7 +30,8 @@ module.exports = {
   },
 
   samples: [
-    'https://zhuanlan.zhihu.com/p/115765034'
+    // 'https://zhuanlan.zhihu.com/p/115765034',
+    'https://zhuanlan.zhihu.com/p/270929159'
   ]
 
 }
