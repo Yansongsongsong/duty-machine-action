@@ -3,6 +3,7 @@ let { Octokit } = require('@octokit/rest')
 let fetchArticle = require('./src/fetchArticle')
 let renderToMarkdown = require('./src/renderToMarkdown')
 let fetch = require('node-fetch')
+let archivePage = require('./src/archiveToWayMachine')
 
 require('dotenv').config()
 
@@ -58,6 +59,7 @@ async function performTasks(list) {
         title: articleData.title,
         labels: ['fetched']
       })
+      await archivePage(url)
     } catch (error) {
       await octokit.issues.createComment({
         owner: OWNER,
@@ -82,7 +84,6 @@ async function performTasks(list) {
 async function perform() {
   let tasks = await getTasks()
   await performTasks(tasks)
-  // todo push to wayback archive
 }
 
 perform()
