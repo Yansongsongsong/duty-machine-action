@@ -35,7 +35,7 @@ module.exports = async function archivePage(url) {
         follow: REDIRECT_TIMES,
     };
 
-    let res = await fetch(`${ARCHIVE_PAGE_URL}${url}`, options)
+    let res = await fetch(`${ARCHIVE_PAGE_URL}${escaped}`, options)
     if (res.ok) {
         console.log("have saved to way machine")
     } else {
