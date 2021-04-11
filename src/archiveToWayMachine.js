@@ -20,6 +20,8 @@ const ERROR_CODE_DIC = {
 }
 
 const ARCHIVE_PAGE_URL = `https://web.archive.org/save/`
+const REDIRECT_TYPE = "follow"
+const REDIRECT_TIMES = 20;
 
 module.exports = async function archivePage(url) {
     let escaped
@@ -28,8 +30,12 @@ module.exports = async function archivePage(url) {
     } catch (e) {
         escaped = new URL(`https://${url}`).href
     }
+    let options = {
+        redirect: REDIRECT_TYPE,
+        follow: REDIRECT_TIMES,
+    };
 
-    let res = await fetch(`${ARCHIVE_PAGE_URL}${url}`)
+    let res = await fetch(`${ARCHIVE_PAGE_URL}${url}`, options)
     if (res.ok) {
         console.log("have saved to way machine")
     } else {
